@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -114,7 +113,6 @@ public class Movie extends AppCompatActivity {
         Intent i = new Intent(Movie.this, quickPlayer.class);
         i.putExtra("key", key);
         startActivityForResult(i, REQUEST_CODE);
-        Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG);
     }
 
 }

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -58,7 +57,6 @@ public class MovieArrayAdapter extends ArrayAdapter<singleMovie> {
     }
 
     public void setOrientation(int orientation) {
-        Toast.makeText(context,"the orientation is " + Integer.toString(orientation), Toast.LENGTH_LONG).show();
         this.orientation = orientation;
     }
 }
