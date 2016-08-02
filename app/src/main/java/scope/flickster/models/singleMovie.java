@@ -37,7 +37,6 @@ public class singleMovie {
 
     public void setOrientation(int orientation) {
         this.orientation = orientation;
-        Log.e("la", "orientation is getting set in the first place " + Integer.toString(this.orientation));
         setPics();
     }
 

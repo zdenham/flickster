@@ -21,8 +21,38 @@
         android:text="Done"
         android:onClick="doneClicked"
         android:id="@+id/btnDone"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tvreleaseDate"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="93dp" />
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rating"
+        android:id="@+id/tvRating"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="popularity: "
+        android:id="@+id/tvPopularity"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvRating"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="release date: "
+        android:id="@+id/tvreleaseDate"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvPopularity"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

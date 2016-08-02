@@ -29,6 +29,7 @@ public class Movie extends AppCompatActivity {
     ListView lvItems;
     int orientation;
     int REQUEST_CODE = 20;
+    int inspectingPos;
 
     @SuppressLint("ShowToast")
     @Override
@@ -81,6 +82,8 @@ public class Movie extends AppCompatActivity {
     public void launchYoutubeVideo(int pos){
         JSONObject myObject = movies.get(pos).myObject;
         String url = "";
+        inspectingPos = pos;
+
         try {
             String source = "https://api.themoviedb.org/3/movie/";
             int id = myObject.getInt("id");
@@ -89,7 +92,6 @@ public class Movie extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new JsonHttpResponseHandler() {
             @Override
@@ -110,7 +112,15 @@ public class Movie extends AppCompatActivity {
     }
 
     public void startViewing(String key) {
+        JSONObject myObject = movies.get(inspectingPos).myObject;
         Intent i = new Intent(Movie.this, quickPlayer.class);
+        try {
+            i.putExtra("popularity", myObject.getDouble("popularity"));
+            i.putExtra("rating", myObject.getDouble("vote_average"));
+            i.putExtra("release_date", myObject.getString("release_date"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         i.putExtra("key", key);
         startActivityForResult(i, REQUEST_CODE);
     }
